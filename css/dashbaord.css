@@ -1,0 +1,58 @@
+#dashboard-layout{
+display:flex;
+height:100vh;
+}
+
+/* SIDEBAR */
+
+#sidebar{
+width:240px;
+background:white;
+padding:20px;
+border-right:1px solid #ddd;
+}
+
+#sidebar-logo{
+font-weight:bold;
+color:#2e7d32;
+margin-bottom:20px;
+}
+
+#sidebar-menu li{
+margin:15px 0;
+}
+
+/* MAIN CONTENT */
+
+#dashboard-content{
+flex:1;
+padding:40px;
+}
+
+/* PROFILE CARD */
+
+#profile-card{
+display:flex;
+align-items:center;
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+#btn-edit-profile{
+margin-left:auto;
+background:#2e7d32;
+color:white;
+padding:10px 20px;
+border-radius:8px;
+}
+
+/* MARKET CARDS */
+
+.price-card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}

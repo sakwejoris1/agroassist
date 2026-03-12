@@ -1,0 +1,134 @@
+body{
+margin:0;
+font-family:Arial;
+background:#f5f7fa;
+}
+
+/* LAYOUT */
+
+#admin-layout{
+display:flex;
+height:100vh;
+}
+
+/* SIDEBAR */
+
+#admin-sidebar{
+width:230px;
+background:#1e293b;
+color:white;
+padding:20px;
+}
+
+#admin-logo{
+margin-bottom:30px;
+}
+
+#admin-sidebar ul{
+list-style:none;
+padding:0;
+}
+
+#admin-sidebar li{
+padding:12px;
+margin-bottom:10px;
+cursor:pointer;
+border-radius:6px;
+}
+
+#admin-sidebar li:hover{
+background:#334155;
+}
+
+.active{
+background:#f45a0c;
+}
+
+/* MAIN */
+
+#admin-main{
+flex:1;
+padding:30px;
+}
+
+/* TOPBAR */
+
+#admin-topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+/* STATS */
+
+#stats-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+margin-bottom:30px;
+}
+
+.stat-card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.stat-card h1{
+margin:10px 0;
+font-size:36px;
+}
+
+/* COLORS */
+
+.green{
+color:#22c55e;
+}
+
+.red{
+color:#ef4444;
+}
+
+/* PANELS */
+
+#dashboard-grid{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:20px;
+}
+
+.panel{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* QUICK ACTIONS */
+
+.quick-actions{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-top:15px;
+}
+
+.quick-actions a{
+background:#f45a0c;
+color:white;
+padding:10px;
+border-radius:6px;
+text-align:center;
+}
+
+/* ACTIVITY */
+
+.activity-list{
+padding-left:15px;
+}
+
+.activity-list li{
+margin-bottom:10px;
+}
