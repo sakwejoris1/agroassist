@@ -1,8 +1,22 @@
+body{
+font-family:Arial;
+background:#f4f6f5;
+margin:0;
+}
+
+/* HEADER */
+
 #market-price-header{
 display:flex;
 justify-content:space-between;
 padding:20px;
 background:white;
+}
+
+/* SEARCH */
+
+#market-price-search-container{
+padding:15px;
 }
 
 #market-price-search-input{
@@ -12,11 +26,27 @@ border-radius:10px;
 border:1px solid #ddd;
 }
 
+/* FILTERS */
+
 #market-price-filters{
 display:flex;
 gap:10px;
 padding:15px;
 }
+
+#market-price-filters button{
+padding:8px 15px;
+border:none;
+border-radius:20px;
+background:#e6efe6;
+}
+
+.filter-active{
+background:#2e7d32;
+color:white;
+}
+
+/* CARDS */
 
 .market-rate-card{
 background:white;
@@ -25,6 +55,24 @@ padding:20px;
 border-radius:14px;
 box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
+
+.rate-info h3{
+margin:0;
+}
+
+.rate-price{
+display:flex;
+justify-content:space-between;
+margin-top:10px;
+}
+
+.rate-change{
+display:flex;
+justify-content:space-between;
+margin-top:10px;
+}
+
+/* COLORS */
 
 .price-up{
 color:green;
@@ -38,13 +86,15 @@ color:red;
 color:#777;
 }
 
+/* FOOTER */
+
 #market-price-bottom-nav{
 position:fixed;
 bottom:0;
 width:100%;
+background:white;
 display:flex;
 justify-content:space-around;
 padding:15px;
-background:white;
 border-top:1px solid #ddd;
 }

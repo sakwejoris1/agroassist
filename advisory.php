@@ -2,9 +2,14 @@
 
 include "backend/db.php";
 
+/* FETCH ADVISORIES */
 $query = "SELECT * FROM advisories ORDER BY created_at DESC";
-
 $result = mysqli_query($conn, $query);
+
+/* CHECK QUERY */
+if(!$result){
+die("Query Failed: " . mysqli_error($conn));
+}
 
 ?>
 <!DOCTYPE html>
@@ -54,17 +59,9 @@ placeholder="Search farming techniques, pests..."
 
 <div id="advisory-filters">
 
-<button id="filter-all-advisory" class="filter-active">
-All Advisory
-</button>
-
-<button id="filter-techniques">
-Techniques
-</button>
-
-<button id="filter-pest-control">
-Pest Control
-</button>
+<button class="filter-active">All Advisory</button>
+<button>Techniques</button>
+<button>Pest Control</button>
 
 </div>
 
@@ -76,13 +73,9 @@ Pest Control
 
 <h2 id="season-title">Seasonal Guidance</h2>
 
-
 <div id="season-card">
 
-<img
-id="season-image"
-src="images/monsoon.jpg"
->
+<img id="season-image" src="images/monsoon.jpg">
 
 <div id="season-content">
 
@@ -104,9 +97,13 @@ Learn essential water management and drainage techniques for the upcoming rainy 
 
 
 
+<!-- RECENT ARTICLES -->
+
 <section id="recent-articles">
 
 <h2 id="articles-title">Recent Articles</h2>
+
+<?php if(mysqli_num_rows($result) > 0) { ?>
 
 <?php while($row = mysqli_fetch_assoc($result)) { ?>
 
@@ -114,34 +111,27 @@ Learn essential water management and drainage techniques for the upcoming rainy 
 
 <img
 class="article-image"
-src="images/<?php echo $row['image']; ?>"
+src="images/<?php echo htmlspecialchars($row['image']); ?>"
+alt="advisory image"
 >
 
 <div class="article-content">
 
 <span class="article-category">
-
-<?php echo strtoupper($row['category']); ?>
-
+<?php echo strtoupper(htmlspecialchars($row['category'])); ?>
 </span>
 
 <h3 class="article-title">
-
-<?php echo $row['title']; ?>
-
+<?php echo htmlspecialchars($row['title']); ?>
 </h3>
 
 <p class="article-desc">
-
-<?php echo $row['description']; ?>
-
+<?php echo htmlspecialchars($row['description']); ?>
 </p>
 
 <span class="article-meta">
-
-<?php echo $row['read_time']; ?> •
+<?php echo htmlspecialchars($row['read_time']); ?> •
 <?php echo date("M d, Y", strtotime($row['created_at'])); ?>
-
 </span>
 
 </div>
@@ -150,18 +140,23 @@ src="images/<?php echo $row['image']; ?>"
 
 <?php } ?>
 
+<?php } else { ?>
+
+<p style="padding:20px;">No advisories available.</p>
+
+<?php } ?>
+
 </section>
+
+
 
 <!-- BOTTOM NAV -->
 
 <footer id="advisory-bottom-nav">
 
 <div id="nav-home">Home</div>
-
 <div id="nav-advisory-active">Advisory</div>
-
 <div id="nav-market">Market</div>
-
 <div id="nav-support">Support</div>
 
 </footer>

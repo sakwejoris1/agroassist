@@ -1,13 +1,16 @@
 <?php
 
 session_start();
+
+/* PROTECT ADMIN PAGE */
+if(!isset($_SESSION['admin_id'])){
+header("Location: login.php");
+exit();
+}
+
+/* CONNECT DATABASE */
 include "backend/db.php";
 
-
-if($_SESSION['role'] != "admin"){
-
-header("Location: login.php");
-exit();}
 /* COUNT FARMERS */
 $farmers = mysqli_fetch_assoc(mysqli_query($conn,"SELECT COUNT(*) AS total FROM farmers"));
 $total_farmers = $farmers['total'];

@@ -4,6 +4,12 @@ if(!isset($_SESSION['farmer_id'])){
 header("Location: login.php");
 exit();
 }
+
+
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 $farmer_name = $_SESSION['farmer_name'];
 ?>
 <!DOCTYPE html>
@@ -12,9 +18,7 @@ $farmer_name = $_SESSION['farmer_name'];
 <head>
 
 <title>Farmer Dashboard</title>
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/dashboard.css">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../agroassist/css/dashbaord.css">
 </head>
 
 <body>
@@ -32,9 +36,16 @@ $farmer_name = $_SESSION['farmer_name'];
     <li id="menu-market-prices">
     <a href="market-price.php">Market Prices</a>
     </li>
-    <li id="menu-advisories">Advisories</li>
-    <li id="menu-messages">Messages</li>
-    <li id="menu-profile">Profile</li>
+    <li id="menu-advisories">
+    <a href="advisory.php">Advisories</a>
+    </li>
+    <li id="menu-messages">
+    <a href="messages.php">Messages</a>
+    </li>
+    <li id="menu-profile">
+    <a href="profile.php">Profile</a>
+    </li>
+    <a href="logout.php" id="btn-logout">Logout</a>
 </ul>
 
 <div id="sidebar-user">

@@ -4,25 +4,31 @@ include "db.php";
 
 $full_name = $_POST['full_name'];
 $email = $_POST['email'];
-$phone = $_POST['phone'];
-$location = $_POST['location'];
-$crop_type = $_POST['crop_type'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-$role = $_POST['role'];
+$role = $_POST['role']; // farmer or admin
 
-$sql = "INSERT INTO users
-(full_name,email,phone,location,crop_type,password,role)
-VALUES
-('$full_name','$email','$phone','$location','$crop_type','$password','$role')";
+if($role == "admin"){
 
-if(mysqli_query($conn,$sql)){
-
-header("Location: ../login.php");
+$sql = "INSERT INTO admins (full_name,email,password)
+VALUES ('$full_name','$email','$password')";
 
 }else{
 
-echo "Registration failed";
+$phone = $_POST['phone'];
+$location = $_POST['location'];
+$crop_type = $_POST['crop_type'];
 
+$sql = "INSERT INTO farmers
+(full_name,email,phone,location,crop_type,password)
+VALUES
+('$full_name','$email','$phone','$location','$crop_type','$password')";
+
+}
+
+if(mysqli_query($conn,$sql)){
+header("Location: ../login.php");
+}else{
+echo "Registration failed";
 }
 
 ?>

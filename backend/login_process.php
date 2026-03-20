@@ -6,40 +6,46 @@ include "db.php";
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM users WHERE email='$email'";
+/* CHECK ADMIN FIRST */
 
-$result = mysqli_query($conn,$sql);
+$admin_query = mysqli_query($conn, "SELECT * FROM admins WHERE email='$email'");
 
-if(mysqli_num_rows($result) > 0){
+if(mysqli_num_rows($admin_query) > 0){
 
-$user = mysqli_fetch_assoc($result);
+$admin = mysqli_fetch_assoc($admin_query);
 
-if(password_verify($password,$user['password'])){
+if(password_verify($password,$admin['password'])){
 
-$_SESSION['user_id'] = $user['id'];
-$_SESSION['user_name'] = $user['full_name'];
-$_SESSION['role'] = $user['role'];
-
-if($user['role'] == "admin"){
+$_SESSION['admin_id'] = $admin['id'];
+$_SESSION['admin_name'] = $admin['full_name'];
 
 header("Location: ../admin-dashboard.php");
+exit();
 
-}else{
+}
+
+}
+
+/* CHECK FARMER */
+
+$farmer_query = mysqli_query($conn, "SELECT * FROM farmers WHERE email='$email'");
+
+if(mysqli_num_rows($farmer_query) > 0){
+
+$farmer = mysqli_fetch_assoc($farmer_query);
+
+if(password_verify($password,$farmer['password'])){
+
+$_SESSION['farmer_id'] = $farmer['id'];
+$_SESSION['farmer_name'] = $farmer['full_name'];
 
 header("Location: ../farmer-dashboard.php");
+exit();
 
 }
 
-}else{
-
-echo "Incorrect password";
-
 }
 
-}else{
-
-echo "User not found";
-
-}
+echo "Invalid email or password";
 
 ?>
