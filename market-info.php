@@ -3,193 +3,168 @@
 
 <head>
 
-<title>Market Info - AgroAssist</title>
+    <title>Market Info - AgroAssist</title>
 
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/market-info.css">
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/market-info.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<!-- HEADER -->
+    <!-- HEADER -->
+    <header id="market-header">
 
-<header id="market-header">
+        <div id="market-logo">
+            🌱 AgroAssist
+        </div>
 
-<div id="market-logo">
-🌱 AgroAssist
-</div>
+        <div id="market-notification">
+            🔔
+        </div>
 
-<div id="market-notification">
-🔔
-</div>
+    </header>
 
-</header>
+    <!-- SEARCH BAR -->
+    <div id="market-search-container">
 
+        <input
+            id="market-search-input"
+            type="text"
+            placeholder="Search crops or markets..."
+        >
 
-<!-- SEARCH BAR -->
+        <button id="market-filter-button">
+            ☰
+        </button>
 
-<div id="market-search-container">
+    </div>
 
-<input
-id="market-search-input"
-type="text"
-placeholder="Search crops or markets..."
->
+    <!-- CATEGORY FILTERS -->
+    <div id="market-category-filters">
 
-<button id="market-filter-button">
-☰
-</button>
+        <button id="filter-all" class="active-filter">
+            All Crops
+        </button>
 
-</div>
+        <button id="filter-cereals">Cereals</button>
+        <button id="filter-vegetables">Vegetables</button>
+        <button id="filter-fruits">Fruits</button>
+        <button id="filter-legumes">Legumes</button>
 
+    </div>
 
-<!-- CATEGORY FILTERS -->
+    <!-- MARKET PRICE LIST -->
+    <section id="market-prices-section">
 
-<div id="market-category-filters">
+        <h2 id="market-section-title">
+            Current Market Prices
+        </h2>
 
-<button id="filter-all" class="active-filter">All Crops</button>
+        <div id="market-price-grid">
 
-<button id="filter-cereals">Cereals</button>
+            <!-- CARD 1 -->
+            <div class="market-card" id="crop-white-maize">
 
-<button id="filter-vegetables">Vegetables</button>
+                <h3 id="crop-name-maize">White Maize</h3>
 
-<button id="filter-fruits">Fruits</button>
+                <p id="crop-category-maize">Grains</p>
 
-<button id="filter-legumes">Legumes</button>
+                <h2 id="crop-price-maize">$25.50</h2>
 
-</div>
+                <p id="crop-market-maize">Central Market</p>
 
+                <span id="crop-change-maize" class="price-up">
+                    +2.4%
+                </span>
 
-<!-- MARKET PRICE LIST -->
+            </div>
 
-<section id="market-prices-section">
+            <!-- CARD 2 -->
+            <div class="market-card" id="crop-rice">
 
-<h2 id="market-section-title">
-Current Market Prices
-</h2>
+                <h3 id="crop-name-rice">Long Grain Rice</h3>
 
+                <p id="crop-category-rice">Cereals</p>
 
-<div id="market-price-grid">
+                <h2 id="crop-price-rice">$42.00</h2>
 
+                <p id="crop-market-rice">Northern Plaza</p>
 
-<!-- CARD 1 -->
+                <span id="crop-change-rice" class="price-down">
+                    -1.2%
+                </span>
 
-<div class="market-card" id="crop-white-maize">
+            </div>
 
-<h3 id="crop-name-maize">White Maize</h3>
+            <!-- CARD 3 -->
+            <div class="market-card" id="crop-tomato">
 
-<p id="crop-category-maize">Grains</p>
+                <h3 id="crop-name-tomato">Red Tomatoes</h3>
 
-<h2 id="crop-price-maize">$25.50</h2>
+                <p id="crop-category-tomato">Vegetables</p>
 
-<p id="crop-market-maize">Central Market</p>
+                <h2 id="crop-price-tomato">$12.00</h2>
 
-<span id="crop-change-maize" class="price-up">
-+2.4%
-</span>
+                <p id="crop-market-tomato">City Terminal</p>
 
-</div>
+                <span id="crop-change-tomato" class="price-stable">
+                    Stable
+                </span>
 
+            </div>
 
-<!-- CARD 2 -->
+            <!-- CARD 4 -->
+            <div class="market-card" id="crop-soybeans">
 
-<div class="market-card" id="crop-rice">
+                <h3 id="crop-name-soybeans">Soybeans</h3>
 
-<h3 id="crop-name-rice">Long Grain Rice</h3>
+                <p id="crop-category-soybeans">Legumes</p>
 
-<p id="crop-category-rice">Cereals</p>
+                <h2 id="crop-price-soybeans">$38.50</h2>
 
-<h2 id="crop-price-rice">$42.00</h2>
+                <p id="crop-market-soybeans">Riverside Hub</p>
 
-<p id="crop-market-rice">Northern Plaza</p>
+                <span id="crop-change-soybeans" class="price-up">
+                    +5.0%
+                </span>
 
-<span id="crop-change-rice" class="price-down">
--1.2%
-</span>
+            </div>
 
-</div>
+        </div>
 
+    </section>
 
-<!-- CARD 3 -->
+    <!-- ADVICE SECTION -->
+    <section id="market-advice-banner">
 
-<div class="market-card" id="crop-tomato">
+        <h2 id="advice-title">
+            Expert Advice for your Maize Farm
+        </h2>
 
-<h3 id="crop-name-tomato">Red Tomatoes</h3>
+        <p id="advice-description">
+            Get personalized tips based on current market trends.
+        </p>
 
-<p id="crop-category-tomato">Vegetables</p>
+        <button id="btn-learn-more">
+            Learn More
+        </button>
 
-<h2 id="crop-price-tomato">$12.00</h2>
+    </section>
 
-<p id="crop-market-tomato">City Terminal</p>
+    <!-- BOTTOM NAVIGATION -->
+    <footer id="market-bottom-nav">
 
-<span id="crop-change-tomato" class="price-stable">
-Stable
-</span>
+        <div id="nav-home">Home</div>
 
-</div>
+        <div id="nav-market-active">Market</div>
 
+        <div id="nav-news">News</div>
 
-<!-- CARD 4 -->
+        <div id="nav-profile">Profile</div>
 
-<div class="market-card" id="crop-soybeans">
-
-<h3 id="crop-name-soybeans">Soybeans</h3>
-
-<p id="crop-category-soybeans">Legumes</p>
-
-<h2 id="crop-price-soybeans">$38.50</h2>
-
-<p id="crop-market-soybeans">Riverside Hub</p>
-
-<span id="crop-change-soybeans" class="price-up">
-+5.0%
-</span>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ADVICE SECTION -->
-
-<section id="market-advice-banner">
-
-<h2 id="advice-title">
-Expert Advice for your Maize Farm
-</h2>
-
-<p id="advice-description">
-
-Get personalized tips based on current market trends.
-
-</p>
-
-<button id="btn-learn-more">
-Learn More
-</button>
-
-</section>
-
-
-
-<!-- BOTTOM NAVIGATION -->
-
-<footer id="market-bottom-nav">
-
-<div id="nav-home">Home</div>
-
-<div id="nav-market-active">Market</div>
-
-<div id="nav-news">News</div>
-
-<div id="nav-profile">Profile</div>
-
-</footer>
+    </footer>
 
 </body>
 

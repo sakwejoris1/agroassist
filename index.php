@@ -1,290 +1,255 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>AgroAssist</title>
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/register.css">
-<link rel="stylesheet" href="css/style.css">
+    <title>AgroAssist</title>
 
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+    <!-- NAVBAR -->
+    <header id="navbar">
 
-<header id="navbar">
+        <div id="logo">
+            🚜 AgroAssist
+        </div>
 
-<div id="logo">
-🚜 AgroAssist
-</div>
+        <nav id="main-navigation">
+            <a id="nav-home" href="index.php">Home</a>
+            <a id="nav-services" href="#">Services</a>
+            <a id="nav-market" href="market-info.php">Market</a>
+            <a id="nav-community" href="#">Community</a>
+        </nav>
 
-<nav id="main-navigation">
+        <div id="auth-buttons">
+            <a id="btn-login" href="login.php">Login</a>
 
-    <a id="nav-home" href="index.php">Home</a>
-    <a id="nav-services" href="#">Services</a>
-    <a id="nav-market" href="market-info.php">Market</a>
-    <a id="nav-community" href="#">Community</a>
+            <a id="btn-register" href="register.php">
+                Register
+            </a>
+        </div>
 
-</nav>
+    </header>
 
-<div id="auth-buttons">
+    <!-- HERO SECTION -->
+    <section id="hero-section">
 
-<a id="btn-login" href="login.php">Login</a>
+        <div id="hero-content">
 
-<a id="btn-register" href="register.php">
-Register
-</a>
+            <h1 id="hero-title">
+                Empowering Farmers with
+                <span id="hero-highlight">Digital Technology</span>
+            </h1>
 
-</div>
+            <p id="hero-description">
+                Access real-time market data, expert advisory,
+                and a global community of farmers.
+            </p>
 
-</header>
+            <div id="hero-buttons">
 
-<!-- HERO SECTION -->
+                <a
+                    id="btn-register-farmer"
+                    href="register.php"
+                    class="primary-btn"
+                >
+                    Register as Farmer
+                </a>
 
-<section id="hero-section">
+                <a
+                    id="btn-login-hero"
+                    href="login.php"
+                    class="secondary-btn"
+                >
+                    Login
+                </a>
 
-<div id="hero-content">
+            </div>
 
-<h1 id="hero-title">
-Empowering Farmers with
-<span id="hero-highlight">Digital Technology</span>
-</h1>
+        </div>
 
-<p id="hero-description">
+    </section>
 
-Access real-time market data, expert advisory,
-and a global community of farmers.
+    <!-- STATISTICS -->
+    <section id="statistics-section">
 
-</p>
+        <div class="stat-card" id="stat-farmers">
+            <h2 id="stat-farmers-count">50000+</h2>
+            <p>Active Farmers</p>
+        </div>
 
-<div id="hero-buttons">
+        <div class="stat-card" id="stat-crops">
+            <h2 id="stat-crops-count">120+</h2>
+            <p>Crops Supported</p>
+        </div>
 
-<a
-id="btn-register-farmer"
-href="register.php"
-class="primary-btn"
->
-Register as Farmer
-</a>
+        <div class="stat-card" id="stat-countries">
+            <h2 id="stat-countries-count">15+</h2>
+            <p>Countries</p>
+        </div>
 
-<a
-id="btn-login-hero"
-href="login.php"
-class="secondary-btn"
->
-Login
-</a>
+    </section>
 
-</div>
+    <!-- SOLUTIONS -->
+    <section id="solutions-section">
 
-</div>
+        <h2 id="solutions-title">
+            Our Digital Solutions
+        </h2>
 
-</section>
+        <div id="solutions-grid">
 
-<!-- STATISTICS -->
+            <div class="solution-card" id="market-price-card">
 
-<section id="statistics-section">
+                <h3>Market Prices</h3>
 
-<div class="stat-card" id="stat-farmers">
+                <p>
+                    Stay ahead with real-time crop prices
+                    from local and global markets.
+                </p>
 
-<h2 id="stat-farmers-count">50000+</h2>
+                <a
+                    id="btn-market-learn"
+                    href="market-price.php"
+                >
+                    Learn More →
+                </a>
 
-<p>Active Farmers</p>
+            </div>
 
-</div>
+            <div class="solution-card" id="expert-advice-card">
 
-<div class="stat-card" id="stat-crops">
+                <h3>Expert Advisory</h3>
 
-<h2 id="stat-crops-count">120+</h2>
+                <p>
+                    Receive agricultural advice based
+                    on soil and weather patterns.
+                </p>
 
-<p>Crops Supported</p>
+                <a id="btn-get-advice" href="#">
+                    Get Advice →
+                </a>
 
-</div>
+            </div>
 
-<div class="stat-card" id="stat-countries">
+            <div class="solution-card" id="community-card">
 
-<h2 id="stat-countries-count">15+</h2>
+                <h3>Smart Messaging</h3>
 
-<p>Countries</p>
+                <p>
+                    Connect with specialists and
+                    farmers instantly.
+                </p>
 
-</div>
+                <a id="btn-join-community" href="#">
+                    Join Community →
+                </a>
 
-</section>
+            </div>
 
-<!-- SOLUTIONS -->
+        </div>
 
-<section id="solutions-section">
+    </section>
 
-<h2 id="solutions-title">
-Our Digital Solutions
-</h2>
+    <!-- CALL TO ACTION -->
+    <section id="cta-section">
 
-<div id="solutions-grid">
+        <h2 id="cta-title">
+            Ready to transform your farm?
+        </h2>
 
-<div class="solution-card" id="market-price-card">
+        <p id="cta-text">
+            Join thousands of farmers using
+            AgroAssist to increase yields.
+        </p>
 
-<h3>Market Prices</h3>
+        <div id="cta-buttons">
 
-<p>
-Stay ahead with real-time crop prices
-from local and global markets.
-</p>
+            <button id="btn-get-started">
+                Get Started Now
+            </button>
 
-<a
-id="btn-market-learn"
-href="market-price.php"
->
-Learn More →
-</a>
+            <button id="btn-view-demo">
+                View Demo
+            </button>
 
-</div>
+        </div>
 
+    </section>
 
-<div class="solution-card" id="expert-advice-card">
+    <!-- FOOTER -->
+    <footer id="footer">
 
-<h3>Expert Advisory</h3>
+        <div id="footer-container">
 
-<p>
-Receive agricultural advice based
-on soil and weather patterns.
-</p>
+            <div id="footer-brand">
 
-<a id="btn-get-advice" href="#">
-Get Advice →
-</a>
+                <h3>AgroAssist</h3>
 
-</div>
+                <p>
+                    The leading digital platform
+                    for sustainable farming.
+                </p>
 
+            </div>
 
-<div class="solution-card" id="community-card">
+            <div id="footer-product">
 
-<h3>Smart Messaging</h3>
+                <h4>Product</h4>
 
-<p>
-Connect with specialists and
-farmers instantly.
-</p>
+                <p id="footer-features">Features</p>
+                <p id="footer-pricing">Pricing</p>
+                <p id="footer-marketplace">Marketplace</p>
 
-<a id="btn-join-community" href="#">
-Join Community →
-</a>
+            </div>
 
-</div>
+            <div id="footer-company">
 
-</div>
+                <h4>Company</h4>
 
-</section>
+                <p id="footer-about">About Us</p>
+                <p id="footer-careers">Careers</p>
+                <p id="footer-contact">Contact</p>
 
-<!-- CALL TO ACTION -->
+            </div>
 
-<section id="cta-section">
+            <div id="footer-newsletter">
 
-<h2 id="cta-title">
+                <h4>Stay Updated</h4>
 
-Ready to transform your farm?
+                <form
+                    id="newsletter-form"
+                    method="POST"
+                    action="subscribe.php"
+                >
 
-</h2>
+                    <input
+                        id="newsletter-email"
+                        name="email"
+                        type="email"
+                        placeholder="Email"
+                    />
 
-<p id="cta-text">
+                    <button
+                        id="newsletter-submit"
+                        type="submit"
+                    >
+                        Subscribe
+                    </button>
 
-Join thousands of farmers using
-AgroAssist to increase yields.
+                </form>
 
-</p>
+            </div>
 
-<div id="cta-buttons">
+        </div>
 
-<button id="btn-get-started">
-
-Get Started Now
-
-</button>
-
-<button id="btn-view-demo">
-
-View Demo
-
-</button>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer id="footer">
-
-<div id="footer-container">
-
-<div id="footer-brand">
-
-<h3>AgroAssist</h3>
-
-<p>
-The leading digital platform
-for sustainable farming.
-</p>
-
-</div>
-
-
-<div id="footer-product">
-
-<h4>Product</h4>
-
-<p id="footer-features">Features</p>
-<p id="footer-pricing">Pricing</p>
-<p id="footer-marketplace">Marketplace</p>
-
-</div>
-
-
-<div id="footer-company">
-
-<h4>Company</h4>
-
-<p id="footer-about">About Us</p>
-<p id="footer-careers">Careers</p>
-<p id="footer-contact">Contact</p>
-
-</div>
-
-
-<div id="footer-newsletter">
-
-<h4>Stay Updated</h4>
-
-<form
-id="newsletter-form"
-method="POST"
-action="subscribe.php"
->
-
-<input
-id="newsletter-email"
-name="email"
-type="email"
-placeholder="Email"
-/>
-
-<button
-id="newsletter-submit"
-type="submit"
->
-
-Subscribe
-
-</button>
-
-</form>
-
-</div>
-
-</div>
-
-</footer>
+    </footer>
 
 </body>
 
