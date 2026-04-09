@@ -43,34 +43,44 @@ $total_market = $market['total'];
 
 <div id="admin-layout">
 
-    <!-- SIDEBAR -->
-    <div id="admin-sidebar">
+<!-- SIDEBAR -->
 
-        <h2 id="admin-logo">🌱 AgroAssist</h2>
+<div id="admin-sidebar">
 
-        <ul>
-            <li class="active">Dashboard</li>
-            <li>Users</li>
-            <li>Market Prices</li>
-            <li>Advisories</li>
-            <li>Settings</li>
-        </ul>
+<h2 id="admin-logo">🌱 AgroAssist</h2>
 
-    </div>
+<ul>
+
+<li class="active">Dashboard</li>
+<li>Users</li>
+<li>Market Prices</li>
+<li>Advisories</li>
+<li>Settings</li>
+
+</ul>
+
+</div>
+
+
 
     <!-- MAIN CONTENT -->
     <div id="admin-main">
 
-        <!-- TOPBAR -->
-        <div id="admin-topbar">
+<!-- TOPBAR -->
 
-            <h2>Dashboard Overview</h2>
+<div id="admin-topbar">
 
-            <div id="admin-profile">
-                <span>Admin</span>
-            </div>
+<h2>Dashboard Overview</h2>
 
-        </div>
+<div id="admin-profile">
+
+<span>Admin</span>
+
+</div>
+
+</div>
+
+
 
         <!-- STATISTICS -->
         <div id="stats-grid">
@@ -98,33 +108,46 @@ $total_market = $market['total'];
         <!-- DASHBOARD GRID -->
         <div id="dashboard-grid">
 
-            <!-- QUICK MANAGEMENT -->
-            <div class="panel">
+<!-- QUICK MANAGEMENT -->
 
-                <h3>Quick Management</h3>
+<div class="panel">
 
-                <div class="quick-actions">
-                    <a href="manage-users.php">Manage Users</a>
-                    <a href="add-prices.php">Add Prices</a>
-                    <a href="publish-advisory.php">Publish Advisory</a>
-                </div>
+<h3>Quick Management</h3>
 
-            </div>
+<div class="quick-actions">
 
-            <!-- RECENT ACTIVITY -->
-            <div class="panel">
+<a href="manage-users.php">Manage Users</a>
 
-                <h3>Recent Activity</h3>
+<a href="add-prices.php">Add Prices</a>
 
-                <ul class="activity-list">
-                    <li>New farmer registered</li>
-                    <li>Market price updated</li>
-                    <li>Weather advisory published</li>
-                </ul>
+<a href="publish-advisory.php">Publish Advisory</a>
 
-            </div>
+</div>
 
-        </div>
+</div>
+
+
+
+<!-- RECENT ACTIVITY -->
+
+<div class="panel">
+
+<h3>Recent Activity</h3>
+
+<ul class="activity-list">
+
+<li>New farmer registered</li>
+
+<li>Market price updated</li>
+
+<li>Weather advisory published</li>
+
+</ul>
+
+</div>
+
+
+</div>
 
     </div>
 

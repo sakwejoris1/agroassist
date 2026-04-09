@@ -2,19 +2,16 @@
 
 include "backend/db.php";
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
 
-$id = $_GET['id'];
+    $id = $_GET['id'];
 
-mysqli_query($conn, "DELETE FROM farmers WHERE id=$id");
+    mysqli_query($conn, "DELETE FROM farmers WHERE id = $id");
 
-header("Location: manage-users.php");
-exit();
+    header("Location: manage-users.php");
+    exit();
 
-}else{
+} else {
 
-echo "No user selected";
-
+    echo "No user selected";
 }
-
-?>
