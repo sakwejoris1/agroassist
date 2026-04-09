@@ -7,160 +7,141 @@ $query = "SELECT * FROM advisories ORDER BY created_at DESC";
 $result = mysqli_query($conn, $query);
 
 /* CHECK QUERY */
-if(!$result){
-die("Query Failed: " . mysqli_error($conn));
+if (!$result) {
+    die("Query Failed: " . mysqli_error($conn));
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
+    <title>Advisory - AgroAssist</title>
 
-<title>Advisory - AgroAssist</title>
-
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/advisory.css">
-
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/advisory.css">
 </head>
 
 <body>
 
+    <!-- HEADER -->
+    <header id="advisory-header">
 
-<!-- HEADER -->
+        <div id="menu-icon">☰</div>
 
-<header id="advisory-header">
+        <h2 id="advisory-logo">AgroAssist</h2>
 
-<div id="menu-icon">☰</div>
+        <div id="profile-icon">👤</div>
 
-<h2 id="advisory-logo">AgroAssist</h2>
+    </header>
 
-<div id="profile-icon">👤</div>
+    <!-- SEARCH -->
+    <div id="advisory-search-container">
 
-</header>
+        <input
+            id="advisory-search-input"
+            type="text"
+            placeholder="Search farming techniques, pests..."
+        >
 
+    </div>
 
+    <!-- CATEGORY FILTER -->
+    <div id="advisory-filters">
 
-<!-- SEARCH -->
+        <button class="filter-active">All Advisory</button>
+        <button>Techniques</button>
+        <button>Pest Control</button>
 
-<div id="advisory-search-container">
+    </div>
 
-<input
-id="advisory-search-input"
-type="text"
-placeholder="Search farming techniques, pests..."
->
+    <!-- SEASONAL GUIDANCE -->
+    <section id="seasonal-guidance">
 
-</div>
+        <h2 id="season-title">Seasonal Guidance</h2>
 
+        <div id="season-card">
 
+            <img id="season-image" src="images/monsoon.jpg">
 
-<!-- CATEGORY FILTER -->
+            <div id="season-content">
 
-<div id="advisory-filters">
+                <span id="season-tag">Trending</span>
 
-<button class="filter-active">All Advisory</button>
-<button>Techniques</button>
-<button>Pest Control</button>
+                <h3 id="season-heading">
+                    Maximizing Monsoon Harvests
+                </h3>
 
-</div>
+                <p id="season-description">
+                    Learn essential water management and drainage techniques for the upcoming rainy season.
+                </p>
 
+            </div>
 
+        </div>
 
-<!-- SEASONAL GUIDANCE -->
+    </section>
 
-<section id="seasonal-guidance">
+    <!-- RECENT ARTICLES -->
+    <section id="recent-articles">
 
-<h2 id="season-title">Seasonal Guidance</h2>
+        <h2 id="articles-title">Recent Articles</h2>
 
-<div id="season-card">
+        <?php if (mysqli_num_rows($result) > 0) { ?>
 
-<img id="season-image" src="images/monsoon.jpg">
+            <?php while ($row = mysqli_fetch_assoc($result)) { ?>
 
-<div id="season-content">
+                <div class="article-card">
 
-<span id="season-tag">Trending</span>
+                    <img
+                        class="article-image"
+                        src="images/<?php echo htmlspecialchars($row['image']); ?>"
+                        alt="advisory image"
+                    >
 
-<h3 id="season-heading">
-Maximizing Monsoon Harvests
-</h3>
+                    <div class="article-content">
 
-<p id="season-description">
-Learn essential water management and drainage techniques for the upcoming rainy season.
-</p>
+                        <span class="article-category">
+                            <?php echo strtoupper(htmlspecialchars($row['category'])); ?>
+                        </span>
 
-</div>
+                        <h3 class="article-title">
+                            <?php echo htmlspecialchars($row['title']); ?>
+                        </h3>
 
-</div>
+                        <p class="article-desc">
+                            <?php echo htmlspecialchars($row['description']); ?>
+                        </p>
 
-</section>
+                        <span class="article-meta">
+                            <?php echo htmlspecialchars($row['read_time']); ?> •
+                            <?php echo date("M d, Y", strtotime($row['created_at'])); ?>
+                        </span>
 
+                    </div>
 
+                </div>
 
-<!-- RECENT ARTICLES -->
+            <?php } ?>
 
-<section id="recent-articles">
+        <?php } else { ?>
 
-<h2 id="articles-title">Recent Articles</h2>
+            <p style="padding:20px;">No advisories available.</p>
 
-<?php if(mysqli_num_rows($result) > 0) { ?>
+        <?php } ?>
 
-<?php while($row = mysqli_fetch_assoc($result)) { ?>
+    </section>
 
-<div class="article-card">
+    <!-- BOTTOM NAV -->
+    <footer id="advisory-bottom-nav">
 
-<img
-class="article-image"
-src="images/<?php echo htmlspecialchars($row['image']); ?>"
-alt="advisory image"
->
+        <div id="nav-home">Home</div>
+        <div id="nav-advisory-active">Advisory</div>
+        <div id="nav-market">Market</div>
+        <div id="nav-support">Support</div>
 
-<div class="article-content">
-
-<span class="article-category">
-<?php echo strtoupper(htmlspecialchars($row['category'])); ?>
-</span>
-
-<h3 class="article-title">
-<?php echo htmlspecialchars($row['title']); ?>
-</h3>
-
-<p class="article-desc">
-<?php echo htmlspecialchars($row['description']); ?>
-</p>
-
-<span class="article-meta">
-<?php echo htmlspecialchars($row['read_time']); ?> •
-<?php echo date("M d, Y", strtotime($row['created_at'])); ?>
-</span>
-
-</div>
-
-</div>
-
-<?php } ?>
-
-<?php } else { ?>
-
-<p style="padding:20px;">No advisories available.</p>
-
-<?php } ?>
-
-</section>
-
-
-
-<!-- BOTTOM NAV -->
-
-<footer id="advisory-bottom-nav">
-
-<div id="nav-home">Home</div>
-<div id="nav-advisory-active">Advisory</div>
-<div id="nav-market">Market</div>
-<div id="nav-support">Support</div>
-
-</footer>
-
+    </footer>
 
 </body>
 

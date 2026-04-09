@@ -11,117 +11,108 @@ $result = mysqli_query($conn, "SELECT * FROM market_rates");
 
 <head>
 
-<title>Market Prices - AgroAssist</title>
+    <title>Market Prices - AgroAssist</title>
 
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/market-price.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/market-price.css">
 
 </head>
 
 <body>
 
-<!-- HEADER -->
+    <!-- HEADER -->
+    <header id="market-price-header">
 
-<header id="market-price-header">
+        <div id="market-price-logo">🚜 AgroAssist</div>
 
-<div id="market-price-logo">🚜 AgroAssist</div>
+        <div id="market-price-notification">🔔</div>
 
-<div id="market-price-notification">🔔</div>
+    </header>
 
-</header>
+    <!-- SEARCH -->
+    <div id="market-price-search-container">
 
+        <input
+            id="market-price-search-input"
+            type="text"
+            placeholder="Search crops or markets..."
+        >
 
-<!-- SEARCH -->
+    </div>
 
-<div id="market-price-search-container">
+    <!-- FILTERS -->
+    <div id="market-price-filters">
 
-<input id="market-price-search-input"
-type="text"
-placeholder="Search crops or markets...">
+        <button class="filter-active">All</button>
+        <button>Grains</button>
+        <button>Vegetables</button>
+        <button>Fruits</button>
 
-</div>
+    </div>
 
+    <!-- MARKET RATES -->
+    <section id="market-rates-section">
 
-<!-- FILTERS -->
+        <h2>Current Market Rates</h2>
 
-<div id="market-price-filters">
+        <?php while ($row = mysqli_fetch_assoc($result)) { ?>
 
-<button class="filter-active">All</button>
-<button>Grains</button>
-<button>Vegetables</button>
-<button>Fruits</button>
+            <div class="market-rate-card">
 
-</div>
+                <div class="rate-info">
 
+                    <h3><?php echo $row['crop_name']; ?></h3>
 
-<!-- MARKET RATES -->
+                    <p><?php echo $row['market_location']; ?></p>
 
-<section id="market-rates-section">
+                </div>
 
-<h2>Current Market Rates</h2>
+                <div class="rate-price">
 
-<?php while($row = mysqli_fetch_assoc($result)) { ?>
+                    <h2>KSh <?php echo $row['price']; ?></h2>
 
-<div class="market-rate-card">
+                    <span><?php echo $row['unit']; ?></span>
 
-<div class="rate-info">
+                </div>
 
-<h3><?php echo $row['crop_name']; ?></h3>
+                <div class="rate-change">
 
-<p><?php echo $row['market_location']; ?></p>
+                    <span class="
+                        <?php 
+                        if (strpos($row['price_change'], '+') !== false) {
+                            echo 'price-up';
+                        } else if (strpos($row['price_change'], '-') !== false) {
+                            echo 'price-down';
+                        } else {
+                            echo 'price-stable';
+                        }
+                        ?>
+                    ">
 
-</div>
+                        <?php echo $row['price_change']; ?>
 
+                    </span>
 
-<div class="rate-price">
+                    <span><?php echo $row['last_updated']; ?></span>
 
-<h2>KSh <?php echo $row['price']; ?></h2>
+                </div>
 
-<span><?php echo $row['unit']; ?></span>
+            </div>
 
-</div>
+        <?php } ?>
 
+    </section>
 
-<div class="rate-change">
+    <!-- FOOTER -->
+    <footer id="market-price-bottom-nav">
 
-<span class="
-<?php 
-if(strpos($row['price_change'], '+') !== false){
-echo 'price-up';
-}else if(strpos($row['price_change'], '-') !== false){
-echo 'price-down';
-}else{
-echo 'price-stable';
-}
-?>
-">
+        <div>Home</div>
+        <div>Market</div>
+        <div>Insights</div>
+        <div>Advisory</div>
+        <div>Profile</div>
 
-<?php echo $row['price_change']; ?>
-
-</span>
-
-<span><?php echo $row['last_updated']; ?></span>
-
-</div>
-
-</div>
-
-<?php } ?>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer id="market-price-bottom-nav">
-
-<div>Home</div>
-<div>Market</div>
-<div>Insights</div>
-<div>Advisory</div>
-<div>Profile</div>
-
-</footer>
+    </footer>
 
 </body>
 
